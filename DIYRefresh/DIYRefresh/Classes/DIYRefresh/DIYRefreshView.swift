@@ -44,7 +44,7 @@ class DIYRefreshView: UIView {
     var lineCount : Int = 0
     var showStyle: Int = 0
     var dropHeight : CGFloat = 0.0
-    var originalContentInsetTop : CGFloat = 0.0
+    var originalContentInsetTop : CGFloat = 64.0
     var disappearProgress : CGFloat = 0.0
     var horizontalRandomness : Int = 0
     var isReverseLoadingAnimation : Bool = false
@@ -166,6 +166,7 @@ extension DIYRefreshView {
             barItem.alpha = 0
             mutableBarItems.append(barItem)
             diyRefresh.addSubview(barItem)
+            
             barItem.setHorizontalRandomness(horizontalRandomness: diyRefresh.horizontalRandomness, dropHeight: diyRefresh.dropHeight)
         }
 
@@ -175,7 +176,7 @@ extension DIYRefreshView {
             barItem.setupWithFrame(rect: diyRefresh.frame)
         }
 
-        diyRefresh.transform = CGAffineTransform.init(scaleX: scale, y: scale * 1)
+        diyRefresh.transform = CGAffineTransform.init(scaleX: scale, y: scale)
         return diyRefresh
     }
 }

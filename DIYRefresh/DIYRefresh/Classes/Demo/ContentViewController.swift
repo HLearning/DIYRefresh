@@ -38,7 +38,7 @@ class ContentViewController: UIViewController {
 //            self.finishRefreshControl()
 //        })
         
-        self.diyRefresh = DIYRefreshView.attach(scrollView: self.tableView, plist: self.name, target: self, refreshAction: #selector(finishRefreshControl), color: .orange, lineWidth: 5, dropHeight: 80, scale: 1, showStyle: 0, horizontalRandomness: 150, isReverseLoadingAnimation: false, finishedCallback: {
+        self.diyRefresh = DIYRefreshView.attach(scrollView: self.tableView, plist: self.name, target: self, refreshAction: #selector(finishRefreshControl), color: .orange, lineWidth: 5, dropHeight: 80, scale: 1, showStyle: 0, horizontalRandomness: 300, isReverseLoadingAnimation: false, finishedCallback: {
             
         })
         

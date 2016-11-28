@@ -45,6 +45,7 @@ extension DIYBarItem {
     func setupWithFrame(rect : CGRect) {
         /// 图像变化时的锚点
         self.layer.anchorPoint = CGPoint.init(x: self.middlePoint.x/self.frame.size.width, y: self.middlePoint.y/self.frame.size.height)
+        
         self.frame = CGRect.init(x: self.frame.origin.x + self.middlePoint.x - self.frame.size.width/2, y: self.frame.origin.y + self.middlePoint.y - self.frame.size.height/2, width: self.frame.size.width, height: self.frame.size.height)
     }
     
