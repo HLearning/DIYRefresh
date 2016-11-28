@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>startPoints</key>
+	<array>
+		<string>{30,10}</string>
+		<string>{10,10}</string>
+		<string>{10,25}</string>
+		<string>{30,35}</string>
+		<string>{30,50}</string>
+		<string>{45,35}</string>
+		<string>{44,29}</string>
+		<string>{60,50}</string>
+		<string>{60,40}</string>
+		<string>{60,30}</string>
+		<string>{70,30}</string>
+		<string>{70,40}</string>
+		<string>{80,30}</string>
+		<string>{90,30}</string>
+		<string>{90,40}</string>
+		<string>{90,50}</string>
+		<string>{80,50}</string>
+		<string>{80,40}</string>
+	</array>
+	<key>endPoints</key>
+	<array>
+		<string>{10,10}</string>
+		<string>{10,25}</string>
+		<string>{30,35}</string>
+		<string>{30,50}</string>
+		<string>{10,50}</string>
+		<string>{45,50}</string>
+		<string>{46,31}</string>
+		<string>{60,40}</string>
+		<string>{60,30}</string>
+		<string>{70,30}</string>
+		<string>{70,40}</string>
+		<string>{70,50}</string>
+		<string>{90,30}</string>
+		<string>{90,40}</string>
+		<string>{90,50}</string>
+		<string>{80,50}</string>
+		<string>{80,40}</string>
+		<string>{90,40}</string>
+	</array>
+</dict>
+</plist>

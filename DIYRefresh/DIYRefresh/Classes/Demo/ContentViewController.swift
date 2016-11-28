@@ -10,13 +10,14 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
-    var data: [Int] = [1001,1]
+    var data: [Int] = [100]
     
     var indexHeader : Int = 100
     
+    var name : String = ""
+    
     lazy var tableView : UITableView = {
         let tableView : UITableView = UITableView.init(frame: self.view.bounds, style: .plain)
-        //let tableView : UITableView = UITableView.init(frame: CGRect.init(x: 0, y: 100, width: 325, height: 400), style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.alwaysBounceVertical = true
@@ -27,17 +28,20 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.setupUI()
         
-//        self.diyRefresh = DIYRefreshView.attach(scrollView: self.tableView, plist: "AKTA",target: self, refreshAction: #selector(finishRefreshControl),  color: .red,  finishedCallback: {
-//            
+        // 方式1:
+        //self.diyRefresh = DIYRefreshView.attach(scrollView: self.tableView, plist: self.name, target: self, refreshAction: #selector(finishRefreshControl), color: .red)
+        
+        // 方式2:
+//        self.diyRefresh = DIYRefreshView.attach(scrollView: self.tableView, plist: self.name, color: .red, finishedCallback: {
 //            self.finishRefreshControl()
-//            self.diyRefresh!.finishingLoading()
 //        })
         
-        self.diyRefresh = DIYRefreshView.attach(scrollView: self.tableView, plist: "A",target: self, refreshAction: #selector(finishRefreshControl), color: UIColor.blue, lineWidth: 5, finishedCallback: nil)
-  
+        self.diyRefresh = DIYRefreshView.attach(scrollView: self.tableView, plist: self.name, target: self, refreshAction: #selector(finishRefreshControl), color: .orange, lineWidth: 5, dropHeight: 80, scale: 1, showStyle: 0, horizontalRandomness: 150, isReverseLoadingAnimation: false, finishedCallback: {
+            
+        })
+        
     }
     
     // 完成刷新控制
@@ -55,7 +59,7 @@ class ContentViewController: UIViewController {
 
 extension ContentViewController {
     func setupUI() {
-        self.title = "DIYRefresh"
+        self.title = self.name
         self.view.backgroundColor = UIColor.white
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
         self.view.addSubview(tableView)
@@ -76,7 +80,7 @@ extension ContentViewController : UITableViewDelegate, UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: "cellID")
         }
-        cell?.textLabel?.text = "测试数据-----" + "\(data[indexPath.row])"
+        cell?.textLabel?.text = self.name + "----->" + "\(data[indexPath.row])"
         
         return cell!
     }

@@ -17,7 +17,9 @@
 		AB139F3A1DE5363B00AA546F /* DIYBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139F391DE5363B00AA546F /* DIYBarItem.swift */; };
 		AB139F3C1DE53FC200AA546F /* DIYRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139F3B1DE53FC200AA546F /* DIYRefreshView.swift */; };
 		AB139F3E1DE56C8C00AA546F /* AKTA.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB139F3D1DE56C8C00AA546F /* AKTA.plist */; };
-		AB139F401DE5788F00AA546F /* A.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB139F3F1DE5788F00AA546F /* A.plist */; };
+		AB53E86D1DEBC54D007393F3 /* MI.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB53E86C1DEBC54D007393F3 /* MI.plist */; };
+		AB53E86F1DEBCD4A007393F3 /* SINA.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB53E86E1DEBCD4A007393F3 /* SINA.plist */; };
+		AB53E8711DEBD0DE007393F3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB53E8701DEBD0DE007393F3 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +56,9 @@
 		AB139F391DE5363B00AA546F /* DIYBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIYBarItem.swift; sourceTree = "<group>"; };
 		AB139F3B1DE53FC200AA546F /* DIYRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIYRefreshView.swift; sourceTree = "<group>"; };
 		AB139F3D1DE56C8C00AA546F /* AKTA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AKTA.plist; sourceTree = "<group>"; };
-		AB139F3F1DE5788F00AA546F /* A.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = A.plist; sourceTree = "<group>"; };
+		AB53E86C1DEBC54D007393F3 /* MI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MI.plist; sourceTree = "<group>"; };
+		AB53E86E1DEBCD4A007393F3 /* SINA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SINA.plist; sourceTree = "<group>"; };
+		AB53E8701DEBD0DE007393F3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 		AB139F351DE532E700AA546F /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				AB53E8701DEBD0DE007393F3 /* MenuViewController.swift */,
 				AB139F361DE532E700AA546F /* ContentViewController.swift */,
 			);
 			path = Demo;
@@ -153,7 +158,8 @@
 		AB139F371DE532E700AA546F /* DIYRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				AB139F3F1DE5788F00AA546F /* A.plist */,
+				AB53E86E1DEBCD4A007393F3 /* SINA.plist */,
+				AB53E86C1DEBC54D007393F3 /* MI.plist */,
 				AB139F3D1DE56C8C00AA546F /* AKTA.plist */,
 				AB139F391DE5363B00AA546F /* DIYBarItem.swift */,
 				AB139F3B1DE53FC200AA546F /* DIYRefreshView.swift */,
@@ -269,10 +275,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB53E86F1DEBCD4A007393F3 /* SINA.plist in Resources */,
 				AB139F3E1DE56C8C00AA546F /* AKTA.plist in Resources */,
 				AB139F0F1DE530BE00AA546F /* LaunchScreen.storyboard in Resources */,
-				AB139F401DE5788F00AA546F /* A.plist in Resources */,
 				AB139F0C1DE530BE00AA546F /* Assets.xcassets in Resources */,
+				AB53E86D1DEBC54D007393F3 /* MI.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB139F381DE532E700AA546F /* ContentViewController.swift in Sources */,
+				AB53E8711DEBD0DE007393F3 /* MenuViewController.swift in Sources */,
 				AB139F3C1DE53FC200AA546F /* DIYRefreshView.swift in Sources */,
 				AB139F3A1DE5363B00AA546F /* DIYBarItem.swift in Sources */,
 				AB139F021DE530BE00AA546F /* AppDelegate.swift in Sources */,

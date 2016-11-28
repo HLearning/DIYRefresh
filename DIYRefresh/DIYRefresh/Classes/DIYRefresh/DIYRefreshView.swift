@@ -18,6 +18,9 @@ let kdisappearDuration : CGFloat = 0.8
 // 相对高度
 let krelativeHeightFactor : CGFloat = 2.0/5
 
+let kinternalAnimationFactor : CGFloat = 0.7
+
+
 let startPointKey = "startPoints"
 let endPointKey = "endPoints"
 
@@ -39,22 +42,12 @@ class DIYRefreshView: UIView {
     var finishedCallback : (() -> ())?
     
     var lineCount : Int = 0
-    
-    // 显示风格: 0:飞来, 1: 淡入淡出
     var showStyle: Int = 0
-    // 下拉的高度
     var dropHeight : CGFloat = 0.0
-    // 原本的ContentInsetTop
     var originalContentInsetTop : CGFloat = 0.0
-    // 消失的进度
     var disappearProgress : CGFloat = 0.0
-    // 内部动画因素
-    var internalAnimationFactor : CGFloat = 0.0
-    // 水平随机数
     var horizontalRandomness : Int = 0
-    // 反向加载动画
     var isReverseLoadingAnimation : Bool = false
-    // 刷新时间
     var refreshTime : CGFloat = 0
     
     override func willMove(toSuperview newSuperview: UIView?) {
@@ -83,7 +76,7 @@ extension DIYRefreshView {
                            color: UIColor)
         -> DIYRefreshView {
             
-            return self.attach(scrollView: scrollView, plist: plist, target: target, refreshAction: refreshAction, color: color, lineWidth: 5, dropHeight: 80, scale: 0.8, showStyle: 0, horizontalRandomness: 150, isReverseLoadingAnimation: false, internalAnimationFactor: 0.7, finishedCallback: nil)
+            return self.attach(scrollView: scrollView, plist: plist, target: target, refreshAction: refreshAction, color: color, lineWidth: 5, dropHeight: 80, scale: 0.8, showStyle: 0, horizontalRandomness: 150, isReverseLoadingAnimation: false, finishedCallback: nil)
     }
 
     class func attach(scrollView: UIScrollView,
@@ -92,10 +85,24 @@ extension DIYRefreshView {
                       finishedCallback: (() -> ())?
         ) -> DIYRefreshView {
         
-        return self.attach(scrollView: scrollView, plist: plist, target: nil, refreshAction: nil, color: color, lineWidth: 5, dropHeight: 80, scale: 0.8, showStyle: 0, horizontalRandomness: 150, isReverseLoadingAnimation: false, internalAnimationFactor: 0.7, finishedCallback: finishedCallback)
+        return self.attach(scrollView: scrollView, plist: plist, target: nil, refreshAction: nil, color: color, lineWidth: 5, dropHeight: 80, scale: 0.8, showStyle: 0, horizontalRandomness: 150, isReverseLoadingAnimation: false, finishedCallback: finishedCallback)
     }
     
     /// 刷新控件的创建方式
+    ///
+    /// - Parameters:
+    ///   - scrollView: 将刷新控件添加到的scrollView对象(可以是scrollView的子类)
+    ///   - plist: 刷新图案的坐标集合
+    ///   - target: 调用此刷新控件的控制器
+    ///   - refreshAction: 刷新时的刷新事件
+    ///   - color: 刷新控件的内容颜色
+    ///   - lineWidth: 刷新控件的线条宽度
+    ///   - dropHeight: 刷新控件的偏移高度
+    ///   - scale: 刷新控件内容的缩放比例(1.0为原生值)
+    ///   - showStyle: 刷新控件的风格(0:飞来风格, 1:淡入淡出)
+    ///   - horizontalRandomness: 产生随机数的水平方向上的值, 可以用来改变飞来风格的初始坐标值
+    ///   - isReverseLoadingAnimation: 是否反向加载动画
+    ///   - finishedCallback: 刷新回调方法
     class func attach(scrollView: UIScrollView,
                     plist: String,
                     target: AnyObject?,
@@ -107,54 +114,34 @@ extension DIYRefreshView {
                     showStyle: Int = 0,
                     horizontalRandomness: CGFloat = 150,
                     isReverseLoadingAnimation: Bool = false,
-                    internalAnimationFactor: CGFloat = 0.7,
                     finishedCallback: (() -> ())?
         ) -> DIYRefreshView {
+        
         /// 创建
         let diyRefresh = DIYRefreshView()
-        /// 下降的高度
         diyRefresh.dropHeight = dropHeight
-        /// 水平随机数
         diyRefresh.horizontalRandomness = Int(horizontalRandomness)
-        /// 滚动视图
         diyRefresh.scrollView = scrollView
-        /// 事件
         diyRefresh.target = target as AnyObject?
-        /// 刷新事件
         diyRefresh.action = refreshAction
-        /// 显示风格
         diyRefresh.showStyle = showStyle
-        /// 反向加载动画
         diyRefresh.isReverseLoadingAnimation = isReverseLoadingAnimation
-        /// 内部动画因素
-        diyRefresh.internalAnimationFactor = internalAnimationFactor
-        
         diyRefresh.finishedCallback = finishedCallback
-        
         
         /// 添加控件
         scrollView.addSubview(diyRefresh)
         
-        // 根据坐标点的最大h和最大y, 来计算框架
         var width : CGFloat = 0
         var height : CGFloat = 0
-        
         /// 字典数据, plist 转 字典
         let str = Bundle.main.path(forResource: plist, ofType: "plist")
         let rootDictionary : NSMutableDictionary = NSMutableDictionary.init(contentsOfFile: str!)!
         
-        /// 开始的数组
         var startPoints : [String] = rootDictionary.object(forKey: startPointKey) as! [String]
-        /// 结束的数组
         var endPoints : [String] = rootDictionary.object(forKey: endPointKey) as! [String]
-        
-        /// 线条的个数
         diyRefresh.lineCount = startPoints.count
-        
-        /// 刷新的时间
         diyRefresh.refreshTime = CGFloat(diyRefresh.lineCount) * kloadingTimingOffset * 2
         
-        /// 遍历, 求出最大的h和最大的w
         for i in 0 ..< startPoints.count {
             let startPoint : CGPoint = CGPointFromString(startPoints[i])
             let endPoint : CGPoint = CGPointFromString(endPoints[i])
@@ -164,10 +151,8 @@ extension DIYRefreshView {
             if startPoint.y > height {height = startPoint.y}
             if endPoint.y > height {height = endPoint.y}
         }
-        /// 确定fream
-        diyRefresh.frame = CGRect.init(x: 0, y: 0, width: width, height: height)
+        diyRefresh.frame = CGRect.init(x: 0, y: 0, width: (width + lineWidth), height: (height + lineWidth))
 
-        // 创建items
         var mutableBarItems : [DIYBarItem] = [DIYBarItem]()
         
         for i in 0 ..< startPoints.count {
@@ -176,53 +161,36 @@ extension DIYRefreshView {
             
             // 创建barItem
             let barItem : DIYBarItem = DIYBarItem.init(frame: diyRefresh.frame, startPoint: startPoint, endPoint: endPoint, color: color, lineWidth: lineWidth)
-            // tag标示
             barItem.tag = i
-            // 无背景色
             barItem.backgroundColor = UIColor.clear
-            // 透明度
             barItem.alpha = 0
-            // 添加到数组
             mutableBarItems.append(barItem)
-            // 添加到刷新控件里面
             diyRefresh.addSubview(barItem)
-
-            // 设置barItem
             barItem.setHorizontalRandomness(horizontalRandomness: diyRefresh.horizontalRandomness, dropHeight: diyRefresh.dropHeight)
         }
 
-        // barItems
         diyRefresh.barItems = mutableBarItems
-        // 控件的fream
-        diyRefresh.frame = CGRect.init(x: 0, y: 0, width: width, height: height)
 
-        diyRefresh.center = CGPoint.init(x: scrollView.frame.size.width / 2 , y: 0)
-
-        //
         for barItem in diyRefresh.barItems {
             barItem.setupWithFrame(rect: diyRefresh.frame)
         }
-        
-        // 默认动画时的缩放比例
+
         diyRefresh.transform = CGAffineTransform.init(scaleX: scale, y: scale * 1)
-        
         return diyRefresh
     }
 }
 
 extension DIYRefreshView{
-    // 偏移量和内边距抵消后, 真正的偏移量
+    
     func realContentOffsetY() -> CGFloat {
         return self.scrollView!.contentOffset.y + self.originalContentInsetTop;
     }
     
-    // 动画的进度
+    /// 动画的进度
     func animationProgress() -> CGFloat {
         
         let x = fabsf(Float(self.realContentOffsetY()))
-        
         let y = max(Double(0), Double(x / Float(self.dropHeight)))
-        
         return CGFloat(min(1.0, y))
     }
     
@@ -243,9 +211,7 @@ extension DIYRefreshView{
             for i in 0 ..< self.barItems.count {
 
                 let barItem = self.barItems[i]
-                
-                // 单线程的函数, 他会在主函数: startLoadingAnimation 执行完, 才开始调用方法: barItemAnimation
-                self.perform(#selector(barItemAnimation), with: barItem, afterDelay: TimeInterval(CGFloat(i ) * kloadingTimingOffset), inModes: [.commonModes])
+                self.perform(#selector(barItemAnimation), with: barItem, afterDelay: TimeInterval(CGFloat(i) * kloadingTimingOffset), inModes: [.commonModes])
             }
         }
     }
@@ -254,7 +220,6 @@ extension DIYRefreshView{
     func barItemAnimation(barItem: DIYBarItem) {
         // 正在刷新中...
         if self.state == DIYRefreshState.refreshing {
-            // 不透明
             barItem.alpha = 1
             // 移除动画
             barItem.layer.removeAllAnimations()
@@ -264,13 +229,10 @@ extension DIYRefreshView{
             })
 
             var isLastOne = true
-            // 如果反向加载, 最后一个是0
             if self.isReverseLoadingAnimation {
                 isLastOne = barItem.tag == 0
             } else {
-                // 如果正向加载, 最后一个是count - 1;
                 isLastOne = barItem.tag == self.barItems.count - 1
-                // 如果是最后一个, 并且正在刷新中, 可以执行第二遍动画
                 if isLastOne && self.state == DIYRefreshState.refreshing {
                     // 开始第二遍动画, 递归,无出口, 形成死循环, 会一直刷新
                     // 不延时的话, 下一遍的第一个线段 会和 上一次的最后一个线段, 同时显示
@@ -284,20 +246,17 @@ extension DIYRefreshView{
     
     // 更新消失动画
     func updateDisappearAnimation() {
-        
         if self.disappearProgress >= 0 && self.disappearProgress <= 1 {
             // iOS设备的刷新频率事60HZ也就是每秒60次。那么每一次刷新的时间就是1/60秒 大概16.7毫秒
             self.disappearProgress -= 1.0/60.0/kdisappearDuration
-            
             self.updateBarItems(progress: self.disappearProgress)
         }
     }
     
-    //
     func updateBarItems(progress: CGFloat) {
         for (index,barItem) in (self.barItems).enumerated() {
-            let startPadding : CGFloat = (1.0 - self.internalAnimationFactor) / CGFloat(self.barItems.count) * CGFloat(index)
-            let endPadding : CGFloat = 1 - self.internalAnimationFactor - startPadding
+            let startPadding : CGFloat = (1.0 - kinternalAnimationFactor) / CGFloat(self.barItems.count) * CGFloat(index)
+            let endPadding : CGFloat = 1 - kinternalAnimationFactor - startPadding
             
             if (progress == 1 || progress >= 1 - endPadding) {
                 barItem.transform = CGAffineTransform.identity
@@ -310,11 +269,16 @@ extension DIYRefreshView{
                     realProgress = 0
                 }
                 else {
-                    realProgress = CGFloat(min(1.0,(progress - startPadding)/self.internalAnimationFactor))
-                    
-                    /// 飞来的风格
+                    realProgress = CGFloat(min(1.0,(progress - startPadding)/kinternalAnimationFactor))
+
                     if self.showStyle == 0 {
+                    
                         barItem.transform = CGAffineTransform.init(translationX: barItem.translationX*(1-realProgress), y: -self.dropHeight*(1-realProgress))
+
+                        barItem.transform = barItem.transform.rotated(by: 3.14*realProgress)
+
+                        barItem.transform = barItem.transform.scaledBy(x: realProgress, y: realProgress)
+                        
                     }
                     
                     barItem.alpha = realProgress * kbarDarkAlpha
@@ -325,10 +289,7 @@ extension DIYRefreshView{
     
     // 完成加载
     func finishingLoading() {
-        // 状态设置为: 消失
         self.state = DIYRefreshState.disappearing
-        
-        // 花费0.8秒来还原scrollview的contentInset
         UIView.animate(withDuration: TimeInterval(kdisappearDuration), animations: {
             self.scrollView?.contentInset.top = self.originalContentInsetTop
         }) { (Bool) in
@@ -356,11 +317,9 @@ extension DIYRefreshView : UIScrollViewDelegate{
         self.center = CGPoint.init(x: UIScreen.main.bounds.size.width/2, y: self.realContentOffsetY() * krelativeHeightFactor)
         // 如果正在拖动
         if (self.scrollView?.isDragging)! {
-            
             if self.originalContentInsetTop == 0 {
                 self.originalContentInsetTop = (self.scrollView?.contentInset.top)!
             }
-
             if self.state == DIYRefreshState.normal {
                 self.updateBarItems(progress: self.animationProgress())
             }

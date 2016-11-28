@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        window?.rootViewController = UINavigationController.init(rootViewController: ContentViewController())
+        window?.rootViewController = UINavigationController.init(rootViewController: MenuViewController())
 
         window?.makeKeyAndVisible()
         
