@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0521F91DED1B4800656302 /* AKTA.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB0521F41DED1B4800656302 /* AKTA.plist */; };
+		AB0521FA1DED1B4800656302 /* DIYBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0521F51DED1B4800656302 /* DIYBarItem.swift */; };
+		AB0521FB1DED1B4800656302 /* DIYRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0521F61DED1B4800656302 /* DIYRefreshView.swift */; };
+		AB0521FC1DED1B4800656302 /* MI.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB0521F71DED1B4800656302 /* MI.plist */; };
+		AB0521FD1DED1B4800656302 /* SINA.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB0521F81DED1B4800656302 /* SINA.plist */; };
+		AB0522011DED1B5B00656302 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0521FF1DED1B5B00656302 /* ContentViewController.swift */; };
+		AB0522021DED1B5B00656302 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0522001DED1B5B00656302 /* MenuViewController.swift */; };
 		AB139F021DE530BE00AA546F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139F011DE530BE00AA546F /* AppDelegate.swift */; };
 		AB139F0A1DE530BE00AA546F /* DIYRefresh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB139F081DE530BE00AA546F /* DIYRefresh.xcdatamodeld */; };
 		AB139F0C1DE530BE00AA546F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB139F0B1DE530BE00AA546F /* Assets.xcassets */; };
 		AB139F0F1DE530BE00AA546F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB139F0D1DE530BE00AA546F /* LaunchScreen.storyboard */; };
 		AB139F1A1DE530BE00AA546F /* DIYRefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139F191DE530BE00AA546F /* DIYRefreshTests.swift */; };
 		AB139F251DE530BE00AA546F /* DIYRefreshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139F241DE530BE00AA546F /* DIYRefreshUITests.swift */; };
-		AB139F381DE532E700AA546F /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139F361DE532E700AA546F /* ContentViewController.swift */; };
-		AB139F3A1DE5363B00AA546F /* DIYBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139F391DE5363B00AA546F /* DIYBarItem.swift */; };
-		AB139F3C1DE53FC200AA546F /* DIYRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139F3B1DE53FC200AA546F /* DIYRefreshView.swift */; };
-		AB139F3E1DE56C8C00AA546F /* AKTA.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB139F3D1DE56C8C00AA546F /* AKTA.plist */; };
-		AB53E86D1DEBC54D007393F3 /* MI.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB53E86C1DEBC54D007393F3 /* MI.plist */; };
-		AB53E86F1DEBCD4A007393F3 /* SINA.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB53E86E1DEBCD4A007393F3 /* SINA.plist */; };
-		AB53E8711DEBD0DE007393F3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB53E8701DEBD0DE007393F3 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB0521F41DED1B4800656302 /* AKTA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AKTA.plist; sourceTree = "<group>"; };
+		AB0521F51DED1B4800656302 /* DIYBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIYBarItem.swift; sourceTree = "<group>"; };
+		AB0521F61DED1B4800656302 /* DIYRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIYRefreshView.swift; sourceTree = "<group>"; };
+		AB0521F71DED1B4800656302 /* MI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MI.plist; sourceTree = "<group>"; };
+		AB0521F81DED1B4800656302 /* SINA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SINA.plist; sourceTree = "<group>"; };
+		AB0521FF1DED1B5B00656302 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		AB0522001DED1B5B00656302 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AB139EFE1DE530BE00AA546F /* DIYRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIYRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB139F011DE530BE00AA546F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB139F091DE530BE00AA546F /* DIYRefresh.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DIYRefresh.xcdatamodel; sourceTree = "<group>"; };
@@ -52,13 +59,6 @@
 		AB139F201DE530BE00AA546F /* DIYRefreshUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIYRefreshUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB139F241DE530BE00AA546F /* DIYRefreshUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIYRefreshUITests.swift; sourceTree = "<group>"; };
 		AB139F261DE530BE00AA546F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB139F361DE532E700AA546F /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
-		AB139F391DE5363B00AA546F /* DIYBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIYBarItem.swift; sourceTree = "<group>"; };
-		AB139F3B1DE53FC200AA546F /* DIYRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIYRefreshView.swift; sourceTree = "<group>"; };
-		AB139F3D1DE56C8C00AA546F /* AKTA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AKTA.plist; sourceTree = "<group>"; };
-		AB53E86C1DEBC54D007393F3 /* MI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MI.plist; sourceTree = "<group>"; };
-		AB53E86E1DEBCD4A007393F3 /* SINA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SINA.plist; sourceTree = "<group>"; };
-		AB53E8701DEBD0DE007393F3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +86,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB0521F31DED1B4800656302 /* DIYRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				AB0521F41DED1B4800656302 /* AKTA.plist */,
+				AB0521F51DED1B4800656302 /* DIYBarItem.swift */,
+				AB0521F61DED1B4800656302 /* DIYRefreshView.swift */,
+				AB0521F71DED1B4800656302 /* MI.plist */,
+				AB0521F81DED1B4800656302 /* SINA.plist */,
+			);
+			path = DIYRefresh;
+			sourceTree = "<group>";
+		};
+		AB0521FE1DED1B5B00656302 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				AB0521FF1DED1B5B00656302 /* ContentViewController.swift */,
+				AB0522001DED1B5B00656302 /* MenuViewController.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		AB139EF51DE530BE00AA546F = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				AB139F011DE530BE00AA546F /* AppDelegate.swift */,
-				AB139F341DE532E700AA546F /* Classes */,
+				AB0521FE1DED1B5B00656302 /* Demo */,
+				AB0521F31DED1B4800656302 /* DIYRefresh */,
 				AB139F0B1DE530BE00AA546F /* Assets.xcassets */,
 				AB139F0D1DE530BE00AA546F /* LaunchScreen.storyboard */,
 				AB139F101DE530BE00AA546F /* Info.plist */,
@@ -135,36 +157,6 @@
 				AB139F261DE530BE00AA546F /* Info.plist */,
 			);
 			path = DIYRefreshUITests;
-			sourceTree = "<group>";
-		};
-		AB139F341DE532E700AA546F /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				AB139F371DE532E700AA546F /* DIYRefresh */,
-				AB139F351DE532E700AA546F /* Demo */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		AB139F351DE532E700AA546F /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				AB53E8701DEBD0DE007393F3 /* MenuViewController.swift */,
-				AB139F361DE532E700AA546F /* ContentViewController.swift */,
-			);
-			path = Demo;
-			sourceTree = "<group>";
-		};
-		AB139F371DE532E700AA546F /* DIYRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				AB53E86E1DEBCD4A007393F3 /* SINA.plist */,
-				AB53E86C1DEBC54D007393F3 /* MI.plist */,
-				AB139F3D1DE56C8C00AA546F /* AKTA.plist */,
-				AB139F391DE5363B00AA546F /* DIYBarItem.swift */,
-				AB139F3B1DE53FC200AA546F /* DIYRefreshView.swift */,
-			);
-			path = DIYRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,11 +267,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB53E86F1DEBCD4A007393F3 /* SINA.plist in Resources */,
-				AB139F3E1DE56C8C00AA546F /* AKTA.plist in Resources */,
+				AB0521FC1DED1B4800656302 /* MI.plist in Resources */,
+				AB0521F91DED1B4800656302 /* AKTA.plist in Resources */,
+				AB0521FD1DED1B4800656302 /* SINA.plist in Resources */,
 				AB139F0F1DE530BE00AA546F /* LaunchScreen.storyboard in Resources */,
 				AB139F0C1DE530BE00AA546F /* Assets.xcassets in Resources */,
-				AB53E86D1DEBC54D007393F3 /* MI.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,12 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB139F381DE532E700AA546F /* ContentViewController.swift in Sources */,
-				AB53E8711DEBD0DE007393F3 /* MenuViewController.swift in Sources */,
-				AB139F3C1DE53FC200AA546F /* DIYRefreshView.swift in Sources */,
-				AB139F3A1DE5363B00AA546F /* DIYBarItem.swift in Sources */,
+				AB0521FA1DED1B4800656302 /* DIYBarItem.swift in Sources */,
+				AB0521FB1DED1B4800656302 /* DIYRefreshView.swift in Sources */,
 				AB139F021DE530BE00AA546F /* AppDelegate.swift in Sources */,
 				AB139F0A1DE530BE00AA546F /* DIYRefresh.xcdatamodeld in Sources */,
+				AB0522011DED1B5B00656302 /* ContentViewController.swift in Sources */,
+				AB0522021DED1B5B00656302 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
