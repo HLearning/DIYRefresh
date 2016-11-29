@@ -1,15 +1,15 @@
 //
-//  DIYRefreshTests.swift
-//  DIYRefreshTests
+//  DIYRefreshDemoTests.swift
+//  DIYRefreshDemoTests
 //
-//  Created by SunnyMac on 16/11/23.
+//  Created by SunnyMac on 16/11/29.
 //  Copyright © 2016年 hjl. All rights reserved.
 //
 
 import XCTest
-@testable import DIYRefresh
+@testable import DIYRefreshDemo
 
-class DIYRefreshTests: XCTestCase {
+class DIYRefreshDemoTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
