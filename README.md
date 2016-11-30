@@ -3,7 +3,7 @@
 - 语言: swift3.0
 
 # 效果展示
-DIYRefresh.gif![效果图](https://github.com/huangjinlei/DIYRefresh/blob/master/DIYRefresh/DIYRefresh.gif)
+DIYRefresh.gif![效果图](https://github.com/huangjinlei/DIYRefresh/blob/master/DIYRefreshDemo/DIYRefresh.gif)
 # 集成框架
 - clone项目到本地, 打开项目, 将DIYRefresh文件夹拖到你的项目代码中即可
 
