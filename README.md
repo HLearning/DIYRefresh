@@ -5,6 +5,7 @@
 # 效果展示
 DIYRefresh.gif![效果图](https://github.com/huangjinlei/DIYRefresh/blob/master/DIYRefreshDemo/DIYRefresh.gif)
 # 集成框架
+- CocoaPods: `pod DIYRefresh`
 - clone项目到本地, 打开项目, 将DIYRefresh文件夹拖到你的项目代码中即可
 
 # 使用框架
@@ -48,7 +49,6 @@ diyRefresh!.finishingLoading()
 ```
 
 # 框架未完成的部分
-- 接下来将会支持CocoaPods
 - 更简单的创作动画的方式, 你告诉我要刷新的动画字母, 我帮你生成Plist文件
 
 # 致谢
