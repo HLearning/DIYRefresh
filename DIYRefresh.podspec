@@ -7,5 +7,5 @@ Pod::Spec.new do |s|
   s.author             = { "huangjinlei" => "544705740@qq.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/huangjinlei/DIYRefresh.git", :tag => "#{s.version}" }
-  s.source_files  = "DIYRefresh", "DIYRefresh/**/*.{swift,plist}"
+  s.source_files  = "DIYRefresh/*.{swift,plist}"
 end
