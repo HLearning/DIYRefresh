@@ -2,15 +2,15 @@
 - 可以个性化定制的下拉刷新框架
 - 语言: swift3.0
 
-# 效果展示
+## 效果展示
 DIYRefresh.gif![效果图](https://github.com/huangjinlei/DIYRefresh/blob/master/DIYRefreshDemo/DIYRefresh.gif)
-# 集成框架
+## 集成框架
 - CocoaPods: `pod DIYRefresh`
 - clone项目到本地, 打开项目, 将DIYRefresh文件夹拖到你的项目代码中即可
 
-# 使用框架
+## 使用框架
 - DIYRefreshView是一个UIView类, 在使用的过程中, 只需要创建一个DIYRefreshView的对象即可
-### 创建DIYRefreshView(框架支持三种创建方式)
+创建DIYRefreshView(框架支持三种创建方式)
 方式1和方式2为简单的创建方式, 屏蔽了大多数的参数, 仅保留了关键的参数, 适应于大部分的情况, 当然, 如果你想完全自定义属于自己的刷新风格, 请采用方式3.
 
 - 注意: (target和refreshAction) 与 (finishedCallback) 必须保留其一, 因为你要在里面写刷新事件.并且要在此事件中, 结束刷新
@@ -48,10 +48,8 @@ let diyRefresh = DIYRefreshView.attach(scrollView: UIScrollView, plist: String, 
 diyRefresh!.finishingLoading()
 ```
 
-# 框架未完成的部分
-- 更简单的创作动画的方式, 你告诉我要刷新的动画字母, 我帮你生成Plist文件
 
-# 致谢
-- 此框架借鉴于: CBStoreHouseRefreshControl和MJRefresh, 继承了两个框架的优点, 在此, 感谢对开源框架作出贡献的攻城狮们
+## 致谢
+- 此框架借鉴于: CBStoreHouseRefreshControl, 继承了次框架的优点, 并在此框架上进一步改进, 在此, 感谢对开源框架作出贡献的攻城狮们
 - 如果你在使用的过程中, 发现问题, 请及时联系我, 我会及时更正
 - 如果你感觉框架还不错, 请为我点亮一颗星, THS
